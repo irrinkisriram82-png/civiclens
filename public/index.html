@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b2a52"><title>CivicLens</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><div class="row" style="justify-content:space-between;margin:0"><h1>CivicLens</h1><div class="langs"><button data-l="en">English</button><button data-l="te" lang="te">తెలుగు</button><button data-l="hi" lang="hi">हिंदी</button></div></div>
+<p><span data-i="tag"></span> <span id="aib" class="pill"></span> <span id="live" class="pill" style="background:#888">offline</span></p></header>
+<nav id="nav"><button data-t="report" class="on" data-i="n_report"></button><button data-t="map" data-i="n_map"></button><button data-t="list" data-i="n_list"></button><button data-t="stats" data-i="n_stats"></button><button data-t="account" data-i="n_acc"></button></nav>
+<main>
+<section id="report" class="on">
+ <div class="card"><h2 data-i="h1"></h2>
+  <label data-i="photo"></label><div class="drop" id="drop" data-i="drop"></div><input id="file" type="file" accept="image/*" hidden>
+  <label><span data-i="desc"></span> <span class="mut">(optional)</span></label><textarea id="txt"></textarea>
+  <div class="row"><select id="lang"><option value="te-IN">Telugu</option><option value="hi-IN">Hindi</option><option value="en-IN">English</option><option value="or-IN">Odia</option></select><button class="btn sec" id="mic" data-i="mic"></button><span class="mut" id="micst"></span></div></div>
+ <div class="card"><h2 data-i="h2"></h2><div class="row"><button class="btn sec" id="gps" data-i="gps"></button><span class="mut" id="pinst"></span></div><div id="pickmap" class="mapbox"></div></div>
+ <div class="card"><button class="btn" id="go" style="width:100%" data-i="go"></button><div id="prog" class="mut"></div></div>
+ <div id="result"></div>
+</section>
+<section id="map"><div class="stats" id="stats1"></div>
+ <div class="card"><div class="filters"><input id="fq" placeholder="Search issues"><select id="fcat"></select><select id="fstat"></select><select id="fband"><option value="">All priorities</option><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select></div><div id="pubmap" class="mapbox tall"></div></div><div id="detail"></div></section>
+<section id="list"><div id="items"></div></section>
+<section id="stats"><div id="an"></div></section>
+<section id="account"><div id="acc"></div></section>
+<section id="about"><div class="card"><h2>About CivicLens</h2>
+<p>CivicLens helps residents report civic problems such as potholes, garbage, water leaks and broken streetlights, and makes it public whether they get fixed. It is a hackathon prototype built for the IDEA//FORGE Online Hackathon (Track 1).</p>
+<h2>How AI is used</h2>
+<ul><li>Reads the photo and the description (Telugu, Hindi, English and more) to identify the issue type.</li><li>Rates damage size and safety risk, and writes a short English summary with the visible evidence.</li><li>Compares a "before" and an "after" photo to check whether a repair was really done.</li><li>Rejects photos that are not civic issues.</li></ul>
+<h2>What is not AI</h2>
+<p>The AI only supplies ratings. The 0 to 100 priority score, duplicate and photo-reuse checks, routing, escalation by service target, permissions and the audit log are ordinary, inspectable code, so the same inputs always give the same result.</p>
+<h2>Human oversight</h2>
+<p>AI output is advisory. Citizens can correct the category before submitting, and officers can override category, status and assignment. Every privileged action is recorded in an audit log.</p>
+<h2>Privacy note</h2>
+<p>Photos and text are sent to the AI provider for analysis. Please do not upload photos of people or private property. <span id="privextra"></span></p>
+<h2>Credits</h2>
+<ul><li>AI model: <b id="aimodel"></b> (the provider can be switched with one setting).</li><li>Maps: Leaflet, OpenStreetMap contributors, and CARTO as a backup map.</li><li>Server: Node.js and Express.</li><li>Landmark locations were compiled using Google Maps search results and should be verified.</li><li>The code was written with the help of an AI coding assistant (Claude).</li></ul>
+<h2>Limitations</h2>
+<p>Sending complaints to authorities is simulated in this prototype. Data is stored in a simple file store, which would move to a database in production.</p></div></section>
+</main><footer><button class="linkbtn" id="aboutbtn">About &amp; credits</button></footer><div id="toast"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body></html>

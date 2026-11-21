@@ -1,0 +1,50 @@
+[
+  {
+    "name": "LASHYAPRIYA Hospital",
+    "type": "hospital",
+    "lat": 18.7633994,
+    "lng": 84.4178942
+  },
+  {
+    "name": "AV Medicare Hospital",
+    "type": "hospital",
+    "lat": 18.7641375,
+    "lng": 84.4180055
+  },
+  {
+    "name": "Aarogya Hospital",
+    "type": "hospital",
+    "lat": 18.7639593,
+    "lng": 84.4201613
+  },
+  {
+    "name": "Gopala Krishna Kusuma Multispeciality Hospital",
+    "type": "hospital",
+    "lat": 18.7683389,
+    "lng": 84.4336258
+  },
+  {
+    "name": "Champion School Kasibugga",
+    "type": "school",
+    "lat": 18.7635163,
+    "lng": 84.4173382
+  },
+  {
+    "name": "Kidzee International School",
+    "type": "school",
+    "lat": 18.7629097,
+    "lng": 84.4196926
+  },
+  {
+    "name": "Sri Chaitanya Techno School",
+    "type": "school",
+    "lat": 18.7646039,
+    "lng": 84.4293677
+  },
+  {
+    "name": "Sri Gayatri School & Junior College",
+    "type": "school",
+    "lat": 18.7580948,
+    "lng": 84.4455561
+  }
+]
